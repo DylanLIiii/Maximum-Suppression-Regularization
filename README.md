@@ -128,31 +128,6 @@ Please find the pretrained weights as well as the training log in the releases *
 - The image classification results in the main paper refer to `Conv/ffcv` folder. See `README.md` there.  
 - The additional image classification results in the appendix refer to `Conv/common_resnet`. See `README.md` there.
 
----
-
-## **Visualization of Logit Characteristics**
-
-To reproduce the logit analysis visualizations from our paper (Figure 1), use the logit analysis toolkit in `viz/`:
-
-```bash
-# Extract logits from trained model
-python viz/logits.py \
-    --checkpoint /path/to/model_checkpoint.pth \
-    --output /path/to/save/logits_labels.pt
-```
-
-- **Key arguments for `logits.py`:**
-  - `--checkpoint`: Path to model checkpoint (should match training config)
-  - `--output`: Output path for `.pt` file containing logits and labels
- 
-
-Then you can use the `analysis.py` to analysis the logits.
-
-The analysis script will produce:
-
-1. **Histogram of near-zero logit proportions**  
-2. **Scatter plot of top-1 probabilities vs near-zero proportions**  
-3. **Saved figures** in the specified directory
 
 <p align="center">
   <img src="logit.png" alt="Logit Analysis" width="300"/>
